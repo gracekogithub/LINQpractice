@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace PracticeProblemsLINQ
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+           
+
             //Problem 1
             List<string> words = new List<string>() { "the", "bike", "this", "it", "tenth", "mathematics" };
+           
 
 
             //Problem 2
@@ -42,6 +45,10 @@ namespace PracticeProblemsLINQ
             //Bonus Problem 1
             string letters = "terrill";
 
+
+
+
+            Console.ReadLine();
         }
     }
 }

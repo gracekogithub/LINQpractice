@@ -17,8 +17,14 @@ namespace PracticeProblemsLINQ
         public static List<string> RunProblem1(List<string> words)
         {
             //code
-
+         
+            var listOfWords = words.Where(w => w.Contains("th")).ToList();
+            foreach (var word in listOfWords)
+            {
+                Console.WriteLine(word);
+            }
             //return
+            return listOfWords;
 
         }
         #endregion
@@ -30,8 +36,17 @@ namespace PracticeProblemsLINQ
         {
             //code
 
-            //return
+            var listOfNames = from n in names.Distinct() select n;
 
+            foreach (var name in listOfNames)
+            {
+                Console.WriteLine(name);
+            }
+            //return
+            return names;
+            //var displayListOfNames = names.Aggregate((s1,s2)=> s1 + ", " + s2);
+            //Console.WriteLine(displayListOfNames);
+            //return names;
         }
         #endregion
 
@@ -41,9 +56,16 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem3(List<Customer> customers)
         {
             //code
-
+          
+        
+            var query = from customer in customers where customer.FirstName == "Mike" select customer;
+            foreach(var customer in query)
+            {
+                Console.WriteLine(customer);
+            }
             //return
-
+            return RunProblem3(customers) ;
+          
         }
         #endregion
 
@@ -54,9 +76,20 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem4(List<Customer> customers)
         {
             //code
+          
+
+            var customerNewName = customers.Where(c => c.Id == 3);
+
+            Console.WriteLine();
+            foreach (Customer customer in customers)
+            {
+                Console.WriteLine(customer.Id);
+            }
+
+
 
             //return
-
+          
         }
         #endregion
 

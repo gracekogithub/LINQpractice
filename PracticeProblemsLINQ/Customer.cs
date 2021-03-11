@@ -22,5 +22,10 @@ namespace PracticeProblemsLINQ
             this.firstName = firstName;
             this.lastName = lastName;
         }
+
+        public void Display()
+        {
+            //Console.WriteLine("customer ID: {0}, Customer name: {1} {2}", Id, FirstName, LastName );
+        }
     }
 }
