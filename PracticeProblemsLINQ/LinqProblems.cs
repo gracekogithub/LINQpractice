@@ -76,19 +76,17 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem4(List<Customer> customers)
         {
             //code
-          
-
-            var customerNewName = customers.Where(c => c.Id == 3);
+           customers = new List<Customer>();
+            var selections = from num in customers where num.Id == 3 select num;
 
             Console.WriteLine();
-            foreach (Customer customer in customers)
+            foreach (Customer selection in selections)
             {
-                Console.WriteLine(customer.Id);
+                Console.WriteLine("Id: {0}, new last name: {1}, new first name {2}",selection.Id, "Smith", "Bill");
             }
 
-
-
             //return
+            return RunProblem4(customers);
           
         }
         #endregion
@@ -101,9 +99,17 @@ namespace PracticeProblemsLINQ
         //Expected output: 86.125
         public static double RunProblem5(List<string> classGrades)
         {
+            //       "80,100,92,89,65", 
+            //       "93,81,78,84,69",
+            //       "73,88,83,99,64",
+            //       "98,100,66,74,55"
             //code
-
+            var stringList = new List<string>();
+            double result = stringList.Sum(x => x.Length) - stringList.Min(x => x.Length);
+            var averages = classGrades.Cast<double>().GroupBy(x => result).Select(c => c.Average()).ToList();
+           
             //return
+            return result;
 
         }
         #endregion
@@ -114,9 +120,16 @@ namespace PracticeProblemsLINQ
         //and returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1")
         public static string RunBonusProblem1(string word)
         {
+            string letters = "terrill";
             //code
+            IEnumerable<string> wordAscending = from w in letters orderby word select word;
+            foreach (var singleLetter in wordAscending)
+            {
+                Console.WriteLine(singleLetter);
+            }
 
             //return
+            return word;
 
         }
         #endregion
